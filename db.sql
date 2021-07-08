@@ -60,7 +60,6 @@ nickname = '강바람',
 email = 'jangka512@gmail.com',
 cellphoneNo = '01012341234';
 
-# d
 # 게시판 테이블 생성
 CREATE TABLE board (
     id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '번호',
