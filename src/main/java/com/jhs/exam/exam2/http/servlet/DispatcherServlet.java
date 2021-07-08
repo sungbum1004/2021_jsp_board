@@ -23,12 +23,12 @@ public class DispatcherServlet extends HttpServlet {
 			return;
 		}
 
-		Controller controller = null;
-
 		if (runInterceptors(rq) == false) {
 			return;
 		}
 
+		Controller controller = null;
+		
 		switch (rq.getControllerTypeName()) {
 		case "usr":
 			switch (rq.getControllerName()) {
@@ -47,6 +47,8 @@ public class DispatcherServlet extends HttpServlet {
 			controller.performAction(rq);
 
 			MysqlUtil.closeConnection();
+		} else {
+			rq.print("올바른 요청이 아닙니다.");
 		}
 	}
 
