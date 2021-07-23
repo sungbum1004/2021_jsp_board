@@ -117,21 +117,21 @@ boardId = 2;
 
 /*
 # 테스트 게시물 만들기
-insert into article
+INSERT INTO article
 (regDate, updateDate, boardId, memberId, title, `body`)
-select
-now(), 
-now, 
-cast(rand() * 2 AS signed) + 1,
+SELECT
+NOW(), 
+NOW(), 
 CAST(RAND() * 2 AS SIGNED) + 1,
-concat('제목--', uuid()),
-concat('내용--', uuid())
-from article;
+CAST(RAND() * 2 AS SIGNED) + 1,
+CONCAT('제목--', UUID()),
+CONCAT('내용--', UUID())
+FROM article;
 
-select count(*) from article where id <= 120;
+SELECT COUNT(*) FROM article WHERE id <= 120;
 
-select id
-from article
+SELECT id
+FROM article
 ORDER BY id ASC
 LIMIT 100;
 
